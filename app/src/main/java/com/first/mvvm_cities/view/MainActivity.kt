@@ -1,17 +1,12 @@
 package com.first.mvvm_cities.view
-
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.first.mvvm_cities.R
 import com.first.mvvm_cities.databinding.ActivityMainBinding
 import com.first.mvvm_cities.viewmodel.CityViewModel
-import com.first.mvvm_cities.model.city
+
 
 
 
@@ -40,7 +35,5 @@ class MainActivity : AppCompatActivity() {
             binding.cityName.text = city.name
             binding.population.text = city.population.toString()
         }   )
-
         }
-
     }
