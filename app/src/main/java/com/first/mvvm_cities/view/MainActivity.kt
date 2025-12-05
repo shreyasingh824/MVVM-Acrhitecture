@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.first.mvvm_cities.R
 import com.first.mvvm_cities.databinding.ActivityMainBinding
 import com.first.mvvm_cities.viewmodel.CityViewModel
@@ -16,19 +17,23 @@ import com.first.mvvm_cities.model.city
 
 class MainActivity : AppCompatActivity() {
 
-    private val model : CityViewModel by viewModels ()
+//    private val model : CityViewModel by viewModels ()
+    private lateinit var viewmodel : CityViewModel
+
     private lateinit var binding : ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+       viewmodel = ViewModelProvider(this).get(CityViewModel::class.java)
         setContentView(binding.root)
     }
     override fun onResume() {
         super.onResume()
 
-        model.getCityData().observe(this, { city ->
+        viewmodel.getCityData().observe(this, { city ->
             binding.citiImage.setImageDrawable(
                 ResourcesCompat.getDrawable(resources, city.img, applicationContext.theme)
             )
