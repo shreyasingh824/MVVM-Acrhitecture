@@ -1,4 +1,6 @@
-package com.first.mvvm_cities
+package com.first.mvvm_cities.model
+
+import com.first.mvvm_cities.R
 
 class CityDataProvider {
     private val cities = arrayListOf<city>()
@@ -13,6 +15,7 @@ class CityDataProvider {
         cities.add(city("Rome", R.drawable.rome, 10_000_000))
         cities.add(city("Singapore", R.drawable.singapore, 10_000_000))
         cities.add(city("Tokyo", R.drawable.tokyo, 10_000_000))
+
     }
 
     fun getCities() = cities

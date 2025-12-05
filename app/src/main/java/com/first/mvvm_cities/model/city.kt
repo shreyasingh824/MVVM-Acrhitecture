@@ -1,4 +1,4 @@
-package com.first.mvvm_cities
+package com.first.mvvm_cities.model
 
 data class city (
     val name: String,
